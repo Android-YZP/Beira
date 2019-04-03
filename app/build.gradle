@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.company1075.Beira"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0.0"
+
+    }
+    signingConfigs {
+        debug {
+            keyAlias 'key0'
+            keyPassword 'company1075'
+            storeFile file('E:/company1075.jks')
+            storePassword 'company1075'
+        }
+        release {
+            keyAlias 'key0'
+            keyPassword 'company1075'
+            storeFile file('E:/company1075.jks')
+            storePassword 'company1075'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    implementation project(':library')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.amap.api:location:3.3.0'
+}
+// 依赖插件脚本
+//apply from: 'tinker-support.gradle'
