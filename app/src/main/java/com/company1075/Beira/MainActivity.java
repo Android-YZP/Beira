@@ -142,10 +142,10 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
 
 
     private void initBanner() {
-        images.add(R.mipmap.ic_launcher);
-        images.add(R.mipmap.ic_launcher);
-        images.add(R.mipmap.ic_launcher);
-        images.add(R.mipmap.ic_launcher);
+        images.add(R.mipmap.ziwaixian);
+        images.add(R.mipmap.ziwaixian);
+        images.add(R.mipmap.ziwaixian);
+        images.add(R.mipmap.ziwaixian);
         //设置图片加载器
         mBanner.setImageLoader(new GlideImageLoader());
         //设置图片集合
