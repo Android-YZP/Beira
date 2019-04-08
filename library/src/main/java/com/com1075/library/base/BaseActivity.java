@@ -1,6 +1,8 @@
 package com.com1075.library.base;
 
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.com1075.library.listener.LifeCycleListener;
 import com.com1075.library.manager.ActivityStackManager;
@@ -19,14 +21,18 @@ public abstract class BaseActivity extends RxAppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //去除title
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //去掉Activity上面的状态栏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         if (mListener != null) {
             mListener.onCreate(savedInstanceState);
         }
-
+        setContentView(getContentViewId());
         //手动对activity栈的管理
         ActivityStackManager.getManager().push(this);
-        setContentView(getContentViewId());
         initBundleData(savedInstanceState);
         initView();
         initData();

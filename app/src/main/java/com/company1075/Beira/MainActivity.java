@@ -1,9 +1,9 @@
 package com.company1075.Beira;
 
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
@@ -11,12 +11,10 @@ import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.com1075.library.base.BaseActivity;
-import com.company1075.Beira.adapters.TestAdapter;
+import com.company1075.Beira.activitys.GoodsInfoActivity;
 import com.company1075.Beira.contract.ITestContract;
 import com.company1075.Beira.presenter.TestPresenter;
 import com.company1075.Beira.utils.GlideImageLoader;
-import com.github.jdsjlzx.recyclerview.LRecyclerView;
-import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
 import com.orhanobut.logger.Logger;
 import com.tencent.bugly.beta.Beta;
 import com.youth.banner.Banner;
@@ -57,8 +55,8 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
     private TextView mTextView;
     private Banner mBanner;
     List<Integer> images = new ArrayList<>();
-    private TestPresenter mTestPresenter = new TestPresenter(this,this);
-    private LRecyclerView mLuRecyclerView;
+    private TestPresenter mTestPresenter = new TestPresenter(this, this);
+    private RelativeLayout mRlGoodsInfo;
 
     @Override
     protected void onStart() {
@@ -81,7 +79,8 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
     protected void initView() {
         mTextView = findViewById(R.id.tv);
         mBanner = findViewById(R.id.banner);
-        mLuRecyclerView = findViewById(R.id.lu_radio_adapter);
+
+        mRlGoodsInfo = findViewById(R.id.rl_goods_info);
     }
 
     @Override
@@ -90,15 +89,6 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
         initBanner();
         Beta.checkUpgrade();
 
-        LinearLayoutManager gridLayoutManager = new LinearLayoutManager(MainActivity.this);
-        mLuRecyclerView.setLayoutManager(gridLayoutManager);
-        TestAdapter  mMyradioAdapter = new TestAdapter(MainActivity.this);
-        LRecyclerViewAdapter   mLuRecyclerViewAdapter = new LRecyclerViewAdapter(mMyradioAdapter);
-        mLuRecyclerView.setAdapter(mLuRecyclerViewAdapter);
-        TextView textView = new TextView(MainActivity.this);
-        textView.setText("这是一个Logo");
-        mLuRecyclerViewAdapter.addFooterView(textView);
-        mMyradioAdapter.setDataList(images);
         mTestPresenter.HttpLogin("");
     }
 
@@ -108,11 +98,17 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
         mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Beta.checkUpgrade(true,false);
+                Beta.checkUpgrade(true, false);
             }
         });
-
+        mRlGoodsInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, GoodsInfoActivity.class));
+            }
+        });
     }
+
     @Override
     public void LoadingData() {
 
@@ -127,13 +123,14 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
     public void LoadingDataSuccess(String result) {
 
     }
+
     @Override
     public void onLocationChanged(AMapLocation aMapLocation) {
         if (aMapLocation != null) {
             if (aMapLocation.getErrorCode() == 0) {
                 //可在其中解析amapLocation获取相应内容。
                 Logger.e(aMapLocation.toString());
-                mTextView.setText(aMapLocation.toString());
+//                mTextView.setText(aMapLocation.toString());
             } else {
                 //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
                 Log.e("AmapError", "location Error, ErrCode:"
@@ -156,6 +153,7 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
         //banner设置方法全部调用完毕时最后调用
         mBanner.start();
     }
+
     private void initLocation() {
         //初始化定位
         mLocationClient = new AMapLocationClient(getApplicationContext());
