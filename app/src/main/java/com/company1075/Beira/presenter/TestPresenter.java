@@ -7,9 +7,10 @@ import com.com1075.library.http.observer.HttpRxObservable;
 import com.com1075.library.http.observer.HttpRxObserver;
 import com.com1075.library.http.retrofit.HttpRequest;
 import com.com1075.library.utils.StringUtils;
-import com.com1075.library.utils.ToastUtils;
+
 import com.company1075.Beira.api.ApiUtils;
 import com.company1075.Beira.contract.ITestContract;
+import com.company1075.Beira.utils.UIUtils;
 import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
 
@@ -50,7 +51,7 @@ public class TestPresenter extends BasePresenter<ITestContract, BaseActivity> {
                 Logger.e(e.toString() + "");
                 if (getView() != null){
                     getView().LoadingDataFail(e.getMsg());
-                    ToastUtils.showLongToast(activity,e.getMsg());
+                    UIUtils.showTip(e.getMsg());
                 }
 
             }

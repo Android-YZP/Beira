@@ -130,7 +130,7 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
             if (aMapLocation.getErrorCode() == 0) {
                 //可在其中解析amapLocation获取相应内容。
                 Logger.e(aMapLocation.toString());
-//                mTextView.setText(aMapLocation.toString());
+                mTextView.setText(aMapLocation.getCity());
             } else {
                 //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
                 Log.e("AmapError", "location Error, ErrCode:"
