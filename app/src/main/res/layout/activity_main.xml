@@ -64,6 +64,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/skin_management"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_marginLeft="@dimen/dp_10"
