@@ -1,17 +1,10 @@
 package com.company1075.Beira.activitys;
 
-import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.view.View;
-
 import com.com1075.library.base.BaseActivity;
 import com.company1075.Beira.R;
-import com.company1075.Beira.adapters.GoodsInfoAdapter;
 import com.company1075.Beira.adapters.HistoryAdapter;
-import com.github.jdsjlzx.interfaces.OnItemClickListener;
 import com.github.jdsjlzx.interfaces.OnLoadMoreListener;
 import com.github.jdsjlzx.interfaces.OnRefreshListener;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
