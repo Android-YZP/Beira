@@ -5,8 +5,6 @@ import com.company1075.Beira.R;
 
 public class GoodsDetialActivity extends BaseActivity {
 
-
-
     @Override
     protected int getContentViewId() {
         return R.layout.activity_goods_detial;

@@ -31,7 +31,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activitys.HistoryActivity"></activity>
+        <activity android:name=".activitys.AnalysisSkinActivity"></activity>
+        <activity android:name=".activitys.HistoryActivity" />
         <activity android:name=".activitys.GoodsDetialActivity" />
         <activity android:name=".activitys.GoodsInfoActivity" />
 

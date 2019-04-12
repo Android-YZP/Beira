@@ -132,6 +132,7 @@ public class ActivityStackManager {
             notificationManager.cancelAll();
             android.os.Process.killProcess(android.os.Process.myPid());
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

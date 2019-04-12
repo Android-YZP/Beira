@@ -1,10 +1,14 @@
 package com.company1075.Beira.activitys;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
+
 import com.com1075.library.base.BaseActivity;
 import com.company1075.Beira.R;
 import com.company1075.Beira.adapters.HistoryAdapter;
+import com.github.jdsjlzx.interfaces.OnItemClickListener;
 import com.github.jdsjlzx.interfaces.OnLoadMoreListener;
 import com.github.jdsjlzx.interfaces.OnRefreshListener;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
@@ -55,7 +59,12 @@ public class HistoryActivity extends BaseActivity {
     @Override
     protected void setListener() {
 
-
+        mLuRecyclerViewAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                startActivity(new Intent(HistoryActivity.this, AnalysisSkinActivity.class));
+            }
+        });
         mLuRecyclerView.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh() {

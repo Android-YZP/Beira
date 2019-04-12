@@ -15,7 +15,8 @@ import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoodsInfoActivity extends BaseActivity {
+public class AnalysisSkinActivity extends BaseActivity {
+
     private LRecyclerView mLuRecyclerView;
     List<Integer> images = new ArrayList<>();
     private LRecyclerViewAdapter mLuRecyclerViewAdapter;
@@ -23,7 +24,7 @@ public class GoodsInfoActivity extends BaseActivity {
 
     @Override
     protected int getContentViewId() {
-        return R.layout.activity_goods_info;
+        return R.layout.activity_analysis_skin;
     }
 
     @Override
@@ -44,10 +45,9 @@ public class GoodsInfoActivity extends BaseActivity {
         images.add(R.mipmap.ic_launcher);
         images.add(R.mipmap.ic_launcher);
 
-
-        LinearLayoutManager gridLayoutManager = new LinearLayoutManager(GoodsInfoActivity.this);
+        LinearLayoutManager gridLayoutManager = new LinearLayoutManager(AnalysisSkinActivity.this);
         mLuRecyclerView.setLayoutManager(gridLayoutManager);
-        mMyradioAdapter = new GoodsInfoAdapter(GoodsInfoActivity.this);
+        mMyradioAdapter = new GoodsInfoAdapter(AnalysisSkinActivity.this);
         mLuRecyclerViewAdapter = new LRecyclerViewAdapter(mMyradioAdapter);
         mLuRecyclerView.setAdapter(mLuRecyclerViewAdapter);
         mLuRecyclerView.setLoadMoreEnabled(true);
@@ -60,7 +60,7 @@ public class GoodsInfoActivity extends BaseActivity {
         mLuRecyclerViewAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                startActivity(new Intent(GoodsInfoActivity.this, GoodsDetialActivity.class));
+                startActivity(new Intent(AnalysisSkinActivity.this, GoodsDetialActivity.class));
             }
         });
 
