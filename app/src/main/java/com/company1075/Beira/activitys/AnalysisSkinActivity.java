@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import com.com1075.library.base.BaseActivity;
 import com.company1075.Beira.R;
+import com.company1075.Beira.adapters.AnalysisSkinAdapter;
 import com.company1075.Beira.adapters.GoodsInfoAdapter;
 import com.github.jdsjlzx.interfaces.OnItemClickListener;
 import com.github.jdsjlzx.interfaces.OnLoadMoreListener;
@@ -20,7 +21,7 @@ public class AnalysisSkinActivity extends BaseActivity {
     private LRecyclerView mLuRecyclerView;
     List<Integer> images = new ArrayList<>();
     private LRecyclerViewAdapter mLuRecyclerViewAdapter;
-    private GoodsInfoAdapter mMyradioAdapter;
+    private AnalysisSkinAdapter mMyradioAdapter;
 
     @Override
     protected int getContentViewId() {
@@ -47,7 +48,7 @@ public class AnalysisSkinActivity extends BaseActivity {
 
         LinearLayoutManager gridLayoutManager = new LinearLayoutManager(AnalysisSkinActivity.this);
         mLuRecyclerView.setLayoutManager(gridLayoutManager);
-        mMyradioAdapter = new GoodsInfoAdapter(AnalysisSkinActivity.this);
+        mMyradioAdapter = new AnalysisSkinAdapter(AnalysisSkinActivity.this);
         mLuRecyclerViewAdapter = new LRecyclerViewAdapter(mMyradioAdapter);
         mLuRecyclerView.setAdapter(mLuRecyclerViewAdapter);
         mLuRecyclerView.setLoadMoreEnabled(true);
