@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
@@ -19,7 +18,6 @@ import com.company1075.Beira.utils.GlideImageLoader;
 import com.orhanobut.logger.Logger;
 import com.tencent.bugly.beta.Beta;
 import com.youth.banner.Banner;
-
 import java.util.ArrayList;
 import java.util.List;
 

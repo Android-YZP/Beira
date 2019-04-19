@@ -7,7 +7,6 @@ import android.view.View;
 import com.com1075.library.base.BaseActivity;
 import com.company1075.Beira.R;
 import com.company1075.Beira.adapters.AnalysisSkinAdapter;
-import com.company1075.Beira.adapters.GoodsInfoAdapter;
 import com.github.jdsjlzx.interfaces.OnItemClickListener;
 import com.github.jdsjlzx.interfaces.OnLoadMoreListener;
 import com.github.jdsjlzx.interfaces.OnRefreshListener;
