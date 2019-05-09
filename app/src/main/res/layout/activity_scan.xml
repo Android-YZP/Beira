@@ -25,14 +25,45 @@
             android:textColor="#fff"
             android:textSize="22sp" />
 
-        <ImageView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_weight="1"
-            android:background="@mipmap/pic2" />
+            android:background="@mipmap/banner_bg">
+
+            <ImageView
+                android:id="@+id/iv_special1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/special1" />
+
+            <ImageView
+                android:id="@+id/iv_special1_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/special1_0" />
+
+            <ImageView
+                android:id="@+id/iv_special1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/special1_1" />
+
+            <ImageView
+                android:id="@+id/iv_special1_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/special1_2" />
+
+        </RelativeLayout>
+
 
         <ImageView
             android:id="@+id/iv_start"
