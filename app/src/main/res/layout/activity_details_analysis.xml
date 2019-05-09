@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical"
+    tools:context=".activitys.DetailsAnalysisActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_weight="1"
+        android:background="@mipmap/banner_bg"
+        android:orientation="vertical">
+
+        <com.github.jdsjlzx.recyclerview.LRecyclerView
+            android:id="@+id/lu_radio_adapter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+
+    <include layout="@layout/item_logo" />
+
+</LinearLayout>

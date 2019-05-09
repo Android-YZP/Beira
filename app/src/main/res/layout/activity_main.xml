@@ -83,6 +83,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/as_scan"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_marginLeft="@dimen/dp_10"

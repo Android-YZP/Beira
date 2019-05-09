@@ -12,6 +12,7 @@ import com.amap.api.location.AMapLocationListener;
 import com.com1075.library.base.BaseActivity;
 import com.company1075.Beira.activitys.GoodsInfoActivity;
 import com.company1075.Beira.activitys.HistoryActivity;
+import com.company1075.Beira.activitys.ScanActivity;
 import com.company1075.Beira.contract.ITestContract;
 import com.company1075.Beira.presenter.TestPresenter;
 import com.company1075.Beira.utils.GlideImageLoader;
@@ -57,6 +58,7 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
     private TestPresenter mTestPresenter = new TestPresenter(this, this);
     private RelativeLayout mRlGoodsInfo;
     private RelativeLayout mRlSkinmanagement;
+    private RelativeLayout mRlAsScan;
 
     @Override
     protected void onStart() {
@@ -82,6 +84,7 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
 
         mRlGoodsInfo = findViewById(R.id.rl_goods_info);
         mRlSkinmanagement = findViewById(R.id.skin_management);
+        mRlAsScan = findViewById(R.id.as_scan);
     }
 
     @Override
@@ -112,6 +115,12 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, HistoryActivity.class));
+            }
+        });
+        mRlAsScan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ScanActivity.class));
             }
         });
     }
